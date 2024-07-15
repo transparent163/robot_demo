@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.9.6 on darwin)" generated="2024-07-15T12:08:14.059389" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo-Test" source="/Users/xuyixian/ROBOT/robot_demo/Demo-Test.robot">
+<test id="s1-t1" name="Test Case - Test Unitl" line="7">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-15T12:08:14.738362" level="INFO">Opening browser 'Chrome' to base url 'https://co-release-11.shimorelease.com/sdk/demo/'.</msg>
+<arg>https://co-release-11.shimorelease.com/sdk/demo/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-15T12:08:14.737916" elapsed="2.389007"/>
+</kw>
+<kw name="Wait Until Element Is Visible And Enabled" owner="Util">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-15T12:08:17.141088" elapsed="1.429723"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-07-15T12:08:18.571258" elapsed="0.032583"/>
+</kw>
+<arg>id=login_email</arg>
+<status status="PASS" start="2024-07-15T12:08:17.138464" elapsed="1.465673"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-15T12:08:18.605188" level="INFO">Typing text 'test1@shimo.im' into text field 'id=login_email'.</msg>
+<arg>id=login_email</arg>
+<arg>test1@shimo.im</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T12:08:18.604579" elapsed="0.325279"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-07-15T12:08:18.933938" level="INFO">Typing password into text field 'id=login_password'.</msg>
+<msg time="2024-07-15T12:08:19.006129" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id=login_password</arg>
+<arg>12345678</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T12:08:18.931213" elapsed="0.261472"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-07-15T12:08:19.195035" level="INFO">Clicking button 'xpath=//button[contains(@class, "ant-btn-primary")]'.</msg>
+<arg>xpath=//button[contains(@class, "ant-btn-primary")]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T12:08:19.194100" elapsed="0.132189"/>
+</kw>
+<kw name="Wait Until Element Is Visible And Enabled" owner="Util">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-15T12:08:19.328074" elapsed="0.335824"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-07-15T12:08:19.664784" elapsed="0.045978"/>
+</kw>
+<arg>xpath=//span[contains(@class, "eventsIcon")]</arg>
+<status status="PASS" start="2024-07-15T12:08:19.327074" elapsed="0.383997"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-15T12:08:19.714953" level="INFO">Clicking element 'xpath=//span[contains(@class, "eventsIcon")]'.</msg>
+<arg>xpath=//span[contains(@class, "eventsIcon")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-15T12:08:19.713050" elapsed="1.591065"/>
+</kw>
+<kw name="Retry Wait Element" owner="Util">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-07-15T12:08:21.306980" level="INFO">@{param} = [ xpath=//a[contains(@href, "/test-api")] ]</msg>
+<var>@{param}</var>
+<arg>${element_xpath}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-07-15T12:08:21.305758" elapsed="0.002598"/>
+</kw>
+<kw name="Retry Action Keyword" owner="Util">
+<kw name="Retry Keyword N Times When Error" owner="Util">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible And Enabled" owner="Util">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-15T12:08:21.331668" elapsed="0.590569"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-07-15T12:08:21.922843" elapsed="0.041268"/>
+</kw>
+<arg>@{elements}</arg>
+<status status="PASS" start="2024-07-15T12:08:21.330926" elapsed="0.633522"/>
+</kw>
+<msg time="2024-07-15T12:08:21.964792" level="INFO">${out} = ('PASS', None)</msg>
+<var>${out}</var>
+<arg>${keyword}</arg>
+<arg>@{elements}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-07-15T12:08:21.328798" elapsed="0.636294"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Exit For Loop If" owner="BuiltIn">
+<msg time="2024-07-15T12:08:21.969699" level="INFO">Exiting for loop altogether.</msg>
+<arg>'${out[0]}'=='PASS'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-15T12:08:21.968340" elapsed="0.001650"/>
+</kw>
+<arg>'${keyword}'=='Make Swagger Client'</arg>
+<arg>Exit For Loop If</arg>
+<arg>'${out[0]}'=='PASS' and '${out[1]}'=='0'</arg>
+<arg>ELSE</arg>
+<arg>Exit For Loop If</arg>
+<arg>'${out[0]}'=='PASS'</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-15T12:08:21.965800" elapsed="0.004376"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-07-15T12:08:21.970714" elapsed="0.000339"/>
+</kw>
+<var name="${n}">1</var>
+<status status="PASS" start="2024-07-15T12:08:21.328045" elapsed="0.643611"/>
+</iter>
+<var>${n}</var>
+<value>1</value>
+<value>${times}</value>
+<status status="PASS" start="2024-07-15T12:08:21.327151" elapsed="0.644875"/>
+</for>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${out[0]}'=='FAIL'</arg>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-15T12:08:21.972365" elapsed="0.001035"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>'${out[0]}'</arg>
+<arg>'PASS'</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-07-15T12:08:21.973934" elapsed="0.001448"/>
+</kw>
+<return>
+<value>${out[1]}</value>
+<status status="PASS" start="2024-07-15T12:08:21.975820" elapsed="0.000209"/>
+</return>
+<arg>4</arg>
+<arg>${keyword}</arg>
+<arg>@{param}</arg>
+<status status="PASS" start="2024-07-15T12:08:21.325820" elapsed="0.651494"/>
+</kw>
+<arg>Wait Until Element Is Visible And Enabled</arg>
+<arg>@{param}</arg>
+<status status="PASS" start="2024-07-15T12:08:21.310840" elapsed="0.666852"/>
+</kw>
+<arg>xpath=//a[contains(@href, "/test-api")]</arg>
+<status status="PASS" start="2024-07-15T12:08:21.304962" elapsed="0.673017"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-15T12:08:21.980739" level="INFO">Clicking element 'xpath=//a[contains(@href, "/test-api")]'.</msg>
+<msg time="2024-07-15T12:08:23.622625" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-07-15T12:08:23.623143" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a class="linkWrapper___Jgopd" href="/sdk/demo/test-api"&gt;...&lt;/a&gt; is not clickable at point (1099, 199). Other element would receive the click: &lt;div class="ant-notification-notice-btn"&gt;...&lt;/div&gt;
+  (Session info: chrome=124.0.6367.93)
+Stacktrace:
+0   chromedriver                        0x000000010dcb2a78 chromedriver + 5216888
+1   chromedriver                        0x000000010dcaa6b3 chromedriver + 5183155
+2   chromedriver                        0x000000010d81c527 chromedriver + 406823
+3   chromedriver                        0x000000010d86ecf3 chromedriver + 744691
+4   chromedriver                        0x000000010d86cbc2 chromedriver + 736194
+5   chromedriver                        0x000000010d86a5f7 chromedriver + 726519
+6   chromedriver                        0x000000010d8699c4 chromedriver + 723396
+7   chromedriver                        0x000000010d85d009 chromedriver + 671753
+8   chromedriver                        0x000000010d88a702 chromedriver + 857858
+9   chromedriver                        0x000000010d85c998 chromedriver + 670104
+10  chromedriver                        0x000000010d88a8be chromedriver + 858302
+11  chromedriver                        0x000000010d8a96bf chromedriver + 984767
+12  chromedriver                        0x000000010d88a4a3 chromedriver + 857251
+13  chromedriver                        0x000000010d85afe3 chromedriver + 663523
+14  chromedriver                        0x000000010d85b92e chromedriver + 665902
+15  chromedriver                        0x000000010dc70990 chromedriver + 4946320
+16  chromedriver                        0x000000010dc76a44 chromedriver + 4971076
+17  chromedriver                        0x000000010dc5148e chromedriver + 4818062
+18  chromedriver                        0x000000010dc77559 chromedriver + 4973913
+19  chromedriver                        0x000000010dc41714 chromedriver + 4753172
+20  chromedriver                        0x000000010dc99c08 chromedriver + 5114888
+21  chromedriver                        0x000000010dc99dc7 chromedriver + 5115335
+22  chromedriver                        0x000000010dcaa2d3 chromedriver + 5182163
+23  libsystem_pthread.dylib             0x00007ff80a96a4e1 _pthread_start + 125
+24  libsystem_pthread.dylib             0x00007ff80a965f6b thread_start + 15
+</msg>
+<arg>xpath=//a[contains(@href, "/test-api")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-07-15T12:08:21.980098" elapsed="1.684797">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a class="linkWrapper___Jgopd" href="/sdk/demo/test-api"&gt;...&lt;/a&gt; is not clickable at point (1099, 199). Other element would receive the click: &lt;div class="ant-notification-notice-btn"&gt;...&lt;/div&gt;
+  (Session info: chrome=124.0.6367.93)
+Stacktrace:
+0   chromedriver                        0x000000010dcb2a78 chromedriver + 5216888
+1   chromedriver                        0x000000010dcaa6b3 chromedriver + 5183155
+2   chromedriver                        0x000000010d81c527 chromedriver + 406823
+3   chromedriver                        0x000000010d86ecf3 chromedriver + 744691
+4   chromedriver                        0x000000010d86cbc2 chromedriver + 736194
+5   chromedriver                        0x000000010d86a5f7 chromedriver + 726519
+6   chromedriver                        0x000000010d8699c4 chromedriver + 723396
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x000000010d85b92e chromedriver + 665902
+15  chromedriver                        0x000000010dc70990 chromedriver + 4946320
+16  chromedriver                        0x000000010dc76a44 chromedriver + 4971076
+17  chromedriver                        0x000000010dc5148e chromedriver + 4818062
+18  chromedriver                        0x000000010dc77559 chromedriver + 4973913
+19  chromedriver                        0x000000010dc41714 chromedriver + 4753172
+20  chromedriver                        0x000000010dc99c08 chromedriver + 5114888
+21  chromedriver                        0x000000010dc99dc7 chromedriver + 5115335
+22  chromedriver                        0x000000010dcaa2d3 chromedriver + 5182163
+23  libsystem_pthread.dylib             0x00007ff80a96a4e1 _pthread_start + 125
+24  libsystem_pthread.dylib             0x00007ff80a965f6b thread_start + 15</status>
+</kw>
+<kw name="Wait Until Element Is Visible And Enabled" owner="Util">
+<arg>id=rc-tabs-1-tab-FileIOResMap</arg>
+<status status="NOT RUN" start="2024-07-15T12:08:23.671704" elapsed="0.000388"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>id=rc-tabs-1-tab-FileIOResMap</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-07-15T12:08:23.674078" elapsed="0.000307"/>
+</kw>
+<kw name="Retry Wait Element" owner="Util">
+<arg>xpath=//tr[@data-row-key="1"]/td/span[@aria-label="unordered-list"]</arg>
+<status status="NOT RUN" start="2024-07-15T12:08:23.675079" elapsed="0.000605"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//tr[@data-row-key="1"]/td/span[@aria-label="unordered-list"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-07-15T12:08:23.677154" elapsed="0.000314"/>
+</kw>
+<kw name="Retry Wait Element" owner="Util">
+<arg>xpath=//button/span[text()="复 制"]</arg>
+<status status="NOT RUN" start="2024-07-15T12:08:23.678117" elapsed="0.000889"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//button/span[text()="复 制"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-07-15T12:08:23.679641" elapsed="0.000222"/>
+</kw>
+<status status="FAIL" start="2024-07-15T12:08:14.736019" elapsed="8.944355">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a class="linkWrapper___Jgopd" href="/sdk/demo/test-api"&gt;...&lt;/a&gt; is not clickable at point (1099, 199). Other element would receive the click: &lt;div class="ant-notification-notice-btn"&gt;...&lt;/div&gt;
+  (Session info: chrome=124.0.6367.93)
+Stacktrace:
+0   chromedriver                        0x000000010dcb2a78 chromedriver + 5216888
+1   chromedriver                        0x000000010dcaa6b3 chromedriver + 5183155
+2   chromedriver                        0x000000010d81c527 chromedriver + 406823
+3   chromedriver                        0x000000010d86ecf3 chromedriver + 744691
+4   chromedriver                        0x000000010d86cbc2 chromedriver + 736194
+5   chromedriver                        0x000000010d86a5f7 chromedriver + 726519
+6   chromedriver                        0x000000010d8699c4 chromedriver + 723396
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x000000010d85b92e chromedriver + 665902
+15  chromedriver                        0x000000010dc70990 chromedriver + 4946320
+16  chromedriver                        0x000000010dc76a44 chromedriver + 4971076
+17  chromedriver                        0x000000010dc5148e chromedriver + 4818062
+18  chromedriver                        0x000000010dc77559 chromedriver + 4973913
+19  chromedriver                        0x000000010dc41714 chromedriver + 4753172
+20  chromedriver                        0x000000010dc99c08 chromedriver + 5114888
+21  chromedriver                        0x000000010dc99dc7 chromedriver + 5115335
+22  chromedriver                        0x000000010dcaa2d3 chromedriver + 5182163
+23  libsystem_pthread.dylib             0x00007ff80a96a4e1 _pthread_start + 125
+24  libsystem_pthread.dylib             0x00007ff80a965f6b thread_start + 15</status>
+</test>
+<status status="FAIL" start="2024-07-15T12:08:14.067836" elapsed="9.620374"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Demo-Test">Demo-Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-07-15T12:08:14.608922" level="WARN">Error in file '/Users/xuyixian/ROBOT/robot_demo/Util.robot' on line 179: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-07-15T12:08:14.609554" level="WARN">Error in file '/Users/xuyixian/ROBOT/robot_demo/Util.robot' on line 186: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-07-15T12:08:14.610116" level="WARN">Error in file '/Users/xuyixian/ROBOT/robot_demo/Util.robot' on line 198: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
